@@ -19,13 +19,16 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
+import java.io.ByteArrayOutputStream;
 import java.util.HashMap;
 import java.util.Map;
+import android.util.Base64;
 
 public class holder extends AppCompatActivity {
 
     private ImageView imgVeiw;
-    private Button openCam;
+    private Button openCam, upload;
+    private Bitmap bitmap;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,11 +37,18 @@ public class holder extends AppCompatActivity {
 
         imgVeiw = findViewById(R.id.capturedImage);
         openCam = findViewById(R.id.openCam);
+        upload = findViewById(R.id.upload);
 
         openCam.setOnClickListener(v -> {
             Intent open_camera = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
             startActivityForResult(open_camera, 100);
-            testAPI();
+        });
+
+        upload.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                testAPI();
+            }
         });
 
     }
@@ -46,18 +56,35 @@ public class holder extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        Bitmap photo = (Bitmap) data.getExtras().get("data");
-        imgVeiw.setImageBitmap(photo);
+        bitmap = (Bitmap) data.getExtras().get("data");
+        imgVeiw.setImageBitmap(bitmap);
     }
 
     private void testAPI(){
         //
         RequestQueue queue = Volley.newRequestQueue(this);
-        StringRequest stringRequest = new StringRequest(Request.Method.GET,
-                "http://192.168.137.153:8000/test/",
+        StringRequest stringRequest = new StringRequest(Request.Method.POST,
+                "http://192.168.1.6:8000/test2/",
                 response -> Toast.makeText(holder.this, response.toString(), Toast.LENGTH_SHORT).show(),
                 error -> Toast.makeText(holder.this, error.toString(), Toast.LENGTH_SHORT).show()
-        );
+        ){
+            @Override
+            protected Map<String, String> getParams() {
+                Map<String,String> params = new HashMap<>();
+                params.put("image", encodeBitmapImage(bitmap));
+                return params;
+            }
+        };
         queue.add(stringRequest);
     }
+
+    //
+    private String encodeBitmapImage(Bitmap bitmap){
+        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+        bitmap.compress(Bitmap.CompressFormat.JPEG, 70, byteArrayOutputStream);
+        byte[] bytesofimage = byteArrayOutputStream.toByteArray();
+        String encodeImageString = Base64.encodeToString(bytesofimage, Base64.DEFAULT);
+        return encodeImageString;
+    }
+
 }
