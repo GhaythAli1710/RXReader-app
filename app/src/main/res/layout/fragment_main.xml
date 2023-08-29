@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainFragment">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:background="@color/background_app"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:ignore="UselessParent">
+
+        <TextView
+            android:text="@string/enter_the_rx_photo_in_this_way"
+            android:textColor="@color/sec_text_color"
+            android:textSize="18sp"
+            android:gravity="center"
+            android:paddingTop="50dp"
+            android:paddingBottom="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <ImageView
+            android:layout_width="300dp"
+            android:layout_height="500dp"
+            android:layout_gravity="center"
+            android:background="@drawable/rximage"
+            android:contentDescription="@string/todo" />
+
+        <ImageButton
+            android:id="@+id/goBtnId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_go"
+            android:layout_gravity="center"
+            android:background="@color/White"
+            android:layout_marginTop="25dp"
+            android:paddingStart="125dp"
+            android:paddingTop="15dp"
+            android:paddingEnd="125dp"
+            android:paddingBottom="15dp"
+            android:contentDescription="@string/todo" />
+    </LinearLayout>
+
+</FrameLayout>

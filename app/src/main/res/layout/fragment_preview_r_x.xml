@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PreviewRXFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/background_app"
+        tools:ignore="UselessParent">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/your_rx"
+            android:textSize="18sp"
+            android:gravity="center"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/sec_text_color"/>
+
+        <ImageView
+            android:id="@+id/rxImageViewId"
+            android:layout_marginTop="10dp"
+            android:layout_width="300dp"
+            android:layout_height="400dp"
+            android:layout_gravity="center"
+            android:contentDescription="@string/todo" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/select_med_like_the_example"
+            android:textSize="18sp"
+            android:gravity="center"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/sec_text_color"/>
+        
+        <ImageView
+            android:layout_width="250dp"
+            android:layout_height="70dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/med"
+            android:contentDescription="@string/todo" />
+
+        <Button
+            android:id="@+id/selectMedBtnId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/select_a_med"
+            android:textColor="@color/sec_text_color"
+            android:backgroundTint="@color/White"
+            android:textStyle="bold"
+            android:layout_marginTop="25dp"
+            android:paddingStart="125dp"
+            android:paddingTop="15dp"
+            android:paddingEnd="125dp"
+            android:paddingBottom="15dp"
+            android:contentDescription="@string/todo" />
+    </LinearLayout>
+
+</FrameLayout>

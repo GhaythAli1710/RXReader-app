@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">RXReader-app</string>
+    <string name="upload_your_rx_photo_to_scan_it">Upload your RX photo to scan it!</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="todo">TODO</string>
+    <string name="submet">Submet</string>
+    <string name="rxreader">RXReader</string>
+    <string name="enter_the_rx_photo_in_this_way">Insert the RX photo in this way..</string>
+    <string name="insert_the_rx_photo_from_your_device_n_either_through_the_camera_n_or_from_the_gallery">Insert the RX photo From your Device,\n Either through the Camera \n or from the Gallery ..</string>
+    <string name="your_rx">Your RX</string>
+    <string name="select_med_like_the_example">Select Med like the example!</string>
+    <string name="select_a_med">SELECT A MED</string>
+    <string name="the_med_your_selected">The Med your selected!</string>
+    <string name="submit">SUBMIT</string>
 </resources>

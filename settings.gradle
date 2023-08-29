@@ -1,15 +1,32 @@
 pluginManagement {
     repositories {
+        //noinspection JcenterRepositoryObsolete
+        jcenter(){
+            content{
+                includeModule("com.theartofdev.edmodo",
+                "android-image-cropper")
+            }
+        }
         google()
         mavenCentral()
         gradlePluginPortal()
+        maven { url 'https://jitpack.io' }
+
     }
 }
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
+        //noinspection JcenterRepositoryObsolete
+        jcenter(){
+            content{
+                includeModule("com.theartofdev.edmodo",
+                        "android-image-cropper")
+            }
+        }
         google()
         mavenCentral()
+        maven { url 'https://jitpack.io' }
     }
 }
 rootProject.name = "RXReader-app"

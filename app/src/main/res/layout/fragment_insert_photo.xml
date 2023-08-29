@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RXProcessingActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/background_app"
+        tools:ignore="UselessParent">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="200dp"
+            android:layout_gravity="center"
+            android:contentDescription="@string/todo"
+            android:src="@drawable/image_view"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="165dp"
+            tools:layout_editor_absoluteY="169dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_gravity="center"
+            android:text="@string/insert_the_rx_photo_from_your_device_n_either_through_the_camera_n_or_from_the_gallery"
+            android:textSize="18sp"
+            android:textColor="@color/sec_text_color"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="62dp"
+            tools:layout_editor_absoluteY="285dp" />
+
+        <ImageButton
+            android:id="@+id/scanBtnId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:layout_gravity="center"
+            android:background="@color/black"
+            android:paddingStart="125dp"
+            android:paddingTop="15dp"
+            android:paddingEnd="125dp"
+            android:paddingBottom="15dp"
+            android:src="@drawable/ic_camera5"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="65dp"
+            tools:layout_editor_absoluteY="350dp"
+            android:contentDescription="@string/todo" />
+
+        <ImageButton
+            android:id="@+id/uploadBtnId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_gravity="center"
+            android:background="@color/White"
+            android:paddingStart="125dp"
+            android:paddingTop="15dp"
+            android:paddingEnd="125dp"
+            android:paddingBottom="15dp"
+            android:src="@drawable/ic_upload"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="65dp"
+            tools:layout_editor_absoluteY="427dp"
+            android:contentDescription="@string/todo" />
+    </LinearLayout>
+</FrameLayout>
